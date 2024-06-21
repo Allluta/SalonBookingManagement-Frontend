@@ -1,0 +1,182 @@
+.navbar {
+    background-color: #221f21; 
+    color: white; 
+    height: 64px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 16px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  
+  .navbar-brand {
+    font-size: 30px; 
+    font-weight: bold; 
+    
+  }
+
+  .navbar-brand-header {
+    font-size: 30px; 
+    font-weight: bold; 
+    
+    transition: background-color 0.3s;
+  }
+  .navbar-brand-header:hover {
+    
+    cursor: pointer; 
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  button {
+    font-size: 18px;
+  
+    color: white;
+    margin-left: 4px; 
+   
+  }
+
+  button.active { 
+    border-bottom: 2px solid white; 
+  }
+
+  .about-salon {
+    text-align: justify;
+    background-image: url(../assets/tło.jpg);
+    background-size: 1900px;
+    line-height: 1.6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .header-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    padding: 10px;
+  }
+
+  .notification-list {
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    max-height: 200px; 
+    overflow-y: auto; 
+    z-index: 1; 
+  }
+  
+  
+  .notification-item {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+  }
+  
+  .notification-item:hover {
+    background-color: #f5f5f5;
+  }
+ 
+  
+.contact-information,
+.newsletter-form {
+  margin: 20px; 
+  background-color: #f5f5f5; 
+  border-radius: 10px; 
+  padding: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.contact-information {
+  background-color: #fff;
+  text-align: justify;
+}
+
+.contact-information h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-information p {
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.newsletter-form {
+  background-color: #fff;
+  text-align: center;
+}
+
+.newsletter-form h2 {
+  background-color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; 
+}
+
+
+.newsletter-form form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.newsletter-form input {
+  
+  width: 100%; 
+  margin-bottom: 10px; 
+}
+
+
+.newsletter-form button {
+  background-color: #fff;
+  font-size: 18px;
+  color: white;
+  background-color: #221f21;
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #333; 
+}
+
+
+  

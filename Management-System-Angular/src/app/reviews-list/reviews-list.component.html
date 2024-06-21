@@ -1,0 +1,23 @@
+
+<div *ngIf="reviews.length > 0" class="reviews-container">
+    <h2>Opinie naszych użytkowników</h2>
+    <div *ngFor="let review of reviews">
+      <div class="review-item">
+        <ng-container *ngIf="review.hairdresserInfo">
+         <p> Fryzjer, którego dotyczy opinia :  {{ review.hairdresserInfo.name }}</p>
+        </ng-container>
+        <ng-container *ngIf="review.ServiceInfo">
+          <p> Usługa, której dotyczy opinia :  {{ review.ReservationService.ServiceInfo.name }}</p>
+         </ng-container>
+
+        <p>Ocena: {{ review.rating }}</p>
+        <p>Komentarz: {{ review.comment }}</p>
+        
+      </div>
+    </div>
+    <div class="average-rating" *ngIf="averageRating > 0">
+      <br>
+        <h2>Średnia ocena: {{ averageRating.toFixed(1) }}</h2>
+      </div>
+  </div>
+  

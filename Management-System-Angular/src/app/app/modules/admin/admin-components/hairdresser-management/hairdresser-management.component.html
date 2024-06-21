@@ -1,0 +1,58 @@
+<div class="bg">
+    <div class="parent">
+      <div class="child">
+        <h1 class="form-title">Dodaj fryzjera</h1>
+        <form [formGroup]="hairdresserForm" class="hairdresser-form">
+  
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Imię</mat-label>
+                <input matInput type="text" id="name" formControlName="name" placeholder="Podaj imię i nazwisko fryzjera" required />
+                <mat-error *ngIf="hairdresserForm.get('name')?.hasError('required')">To pole jest wymagane.</mat-error>
+              </mat-form-field>
+              
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Opis</mat-label>
+                <textarea matInput id="description" formControlName="description" placeholder="Podaj opis fryzjera" required></textarea>
+                <mat-error *ngIf="hairdresserForm.get('description')?.hasError('required')">To pole jest wymagane.</mat-error>
+              </mat-form-field>
+              
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Doświadczenie / Umiejętności</mat-label>
+                <textarea matInput id="experience" formControlName="experience" placeholder="Podaj doświadczenie lub umiejętności fryzjera" required></textarea>
+                <mat-error *ngIf="hairdresserForm.get('experience')?.hasError('required')">To pole jest wymagane.</mat-error>
+              </mat-form-field>
+              
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Godziny pracy</mat-label>
+                <input matInput type="text" id="workingHours" formControlName="workingHours" placeholder="Podaj godziny pracy fryzjera" required />
+                <mat-error *ngIf="hairdresserForm.get('workingHours')?.hasError('required')">To pole jest wymagane.</mat-error>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" id="email" formControlName="email" placeholder="Podaj adres e-mail fryzjera" required />
+                <mat-error *ngIf="hairdresserForm.get('email')?.hasError('required')">To pole jest wymagane.</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Numer telefonu</mat-label>
+                <input matInput type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="Podaj numer telefonu fryzjera" required />
+                <mat-error *ngIf="hairdresserForm.get('phoneNumber')?.hasError('required')">To pole jest wymagane.</mat-error>
+              </mat-form-field>
+
+
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Hasło</mat-label>
+                <input matInput type="password" placeholder="Password" formControlName="password" />
+                <mat-error *ngIf="hairdresserForm.get('password')?.hasError('required')">This Input Is Required</mat-error>
+              </mat-form-field>
+            
+          <div class="form-group">
+            <button type="submit" mat-raised-button color="primary" (click)="addHairdresser()" [disabled]="hairdresserForm.invalid">Dodaj fryzjera</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  

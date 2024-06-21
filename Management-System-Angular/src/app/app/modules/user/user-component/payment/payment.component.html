@@ -1,0 +1,47 @@
+<div class="body">
+<div class="payment-container">
+  <h2>Podsumowanie płatności</h2>
+
+  <div class="payment-details">
+    <label for="bankSelection">Wybierz bank:</label>
+    <select id="bankSelection" [(ngModel)]="selectedBank">
+      <option *ngFor="let bank of banks" [ngValue]="bank">{{ bank.name }}</option>
+    </select>
+
+    <div class="payment-summary" *ngIf="selectedBank">
+      <h3>Wybrany bank:</h3>
+      <div class="bank-info">
+        <img [src]="selectedBank.logo" alt="Bank Logo" class="bank-logo" />
+        <span>{{ selectedBank.name }}</span>
+      </div>
+    </div>
+
+    <div class="card-holder-details">
+      <label for="cardHolderName">Imię i nazwisko na karcie:</label>
+      <input type="text" id="cardHolderName" [(ngModel)]="cardHolderName" placeholder="Imię" />
+    </div>
+
+    <label for="creditCardNumber">Numer karty kredytowej:</label>
+    <div class="credit-card-input">
+      <input type="text" id="creditCardNumber" [(ngModel)]="creditCardNumber" (input)="formatCreditCardNumber()" maxlength="19" placeholder="1234 5678 9012 3456" />
+    </div>
+
+    <label for="expiryDate">Data ważności karty:</label>
+    <input type="text" id="expiryDate" [(ngModel)]="expiryDate" (input)="formatExpiryDate()" maxlength="5" placeholder="MM/YY" />
+
+    <label for="cvv">Kod CVV:</label>
+    <input type="text" id="cvv" [(ngModel)]="cvv" maxlength="3" placeholder="CVV" />
+
+    <button (click)="processPayment()">Zapłać</button>
+  </div>
+
+  <div class="payment-message" *ngIf="paymentStatusMessage">
+    <p>{{ paymentStatusMessage }}</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+  </div>
+</div>
+</div>

@@ -1,0 +1,37 @@
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border: 1px solid transparent; 
+  }
+  
+  button[mat-button] {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50; 
+    border-radius: 4px;
+  }
+  
+  button[mat-button]:hover {
+    background-color: #45a049;
+    border-color: #45a049; 
+  }
+  
+  button[mat-button][color="warn"] {
+    background-color: #d9534f;
+    border-color: #d9534f; 
+  }
+  
+  button[mat-button][color="warn"]:hover {
+    background-color: #c9302c;
+    border-color: #c9302c; 
+  }
+  

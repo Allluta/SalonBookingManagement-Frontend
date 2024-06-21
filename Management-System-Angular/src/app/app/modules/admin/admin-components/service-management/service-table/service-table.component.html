@@ -1,0 +1,31 @@
+<div class="table-container">
+    <table>
+      <thead>
+        <tr>
+            <th colspan="5">USŁUGI</th>
+          </tr>
+          <tr>
+        <tr>
+          <th>Nazwa usługi</th>
+          <th>Opis</th>
+          <th>Cena</th>
+          <th>Czas trwania (minuty)</th>
+          <th>Akcje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let service of services">
+          <td>{{ service.name }}</td>
+          <td>{{ service.description }}</td>
+          <td>{{ service.price }}</td>
+          <td>{{ service.duration }}</td>
+          <td>
+            <button (click)="editService(service)">Aktualizuj</button>
+            <br>
+            <button (click)="deleteService(service)">Usuń</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

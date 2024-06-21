@@ -1,0 +1,40 @@
+
+
+.reviews-container {
+    margin-top: 20px;
+    padding: 20px;
+   
+    border-radius: 8px;
+   
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .review-item {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-item p {
+    margin: 0;
+  }
+  
+  .review-item p:first-child {
+    font-weight: bold;
+  }
+  
+  
+  .review-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .average-rating {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  

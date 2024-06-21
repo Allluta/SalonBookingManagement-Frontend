@@ -1,0 +1,37 @@
+<div class = "bg">
+    <div class = "parent">
+        <div class = "child">
+            <h1 class = "form-title">Witamy</h1>
+            <br>
+            <p> Proszę wprowadź dane logowania </p>
+            <form class ="login-form" [formGroup]="loginForm" >
+
+                 <mat-form-field appearance ="outline" class = "form-field">
+                    <mat-label>Email</mat-label> 
+                    <input matInput type="email" placeholder="Wprowadź email" formControlName="email" /> 
+
+                    <mat-error *ngIf="loginForm.get('email')?.hasError('required')">To pole jest wymagane</mat-error>
+                    <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Wprowadź poprawny adres.</mat-error>
+
+                 </mat-form-field>
+
+                 <mat-form-field appearance ="outline" class="form-field">
+                    <mat-label>Hasło</mat-label>
+                    <input matInput type="password" placeholder="Wprowadź hasło" formControlName="password" /> 
+                    
+                    <mat-error *ngIf="loginForm.get('password')?.hasError('required')">To pole jest wymagane</mat-error>
+                 </mat-form-field>
+
+                 <button  mat-raised-button color ="primary" (click)="login()" 
+                 [disabled] = "loginForm.invalid">Zaloguj</button>
+            </form> 
+            <div class="spacer"></div> 
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+              <router-outlet></router-outlet>
+
+            
+        </div>
+    </div>
+</div>

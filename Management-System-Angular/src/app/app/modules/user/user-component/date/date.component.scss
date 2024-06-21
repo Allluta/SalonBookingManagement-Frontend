@@ -1,0 +1,114 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(../../../../../assets/tło.jpg);
+  background-size: cover;
+}
+
+
+.date-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-image: url(../../../../../assets/tło.jpg);
+    background-size: 1600px;
+
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 100%;
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    label {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  }
+
+  button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .error-message {
+    margin-top: 20px;
+    color: #d9534f;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      margin-top: 10px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    button[mat-button][color="warn"] {
+      background-color: #d9534f;
+    }
+  }
+}
