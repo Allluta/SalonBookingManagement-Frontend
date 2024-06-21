@@ -1,0 +1,73 @@
+
+.hairdresser-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow: auto; 
+    background-image: url(../../../../../assets/tło.jpg);
+    background-size: 1600px;
+  }
+  
+  
+  .hairdresser-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 300px; 
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hairdresser-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .hairdresser-details {
+    flex: 1; 
+    padding: 0 20px;
+  }
+  
+  .hairdresser-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .hairdresser-description {
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .hairdresser-email,
+  .hairdresser-experience,
+  .hairdresser-phone,
+  .hairdresser-working-hours {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+  
+  .select-button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    opacity: 0; 
+    animation: fadeIn 0.2s 0.2s forwards;
+  }
+  
+  .select-button:hover {
+    background-color: #555;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

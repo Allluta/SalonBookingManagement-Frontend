@@ -1,0 +1,38 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th colspan="7">FRYZJERZY</th>
+      </tr>
+      <tr>
+        <th>Imię</th>
+        <th>Opis</th>
+        <th>Doświadczenie</th>
+        <th>Godziny pracy</th>
+        <th> Email</th>
+        <th>Numer telefonu</th>
+        
+        <th>Akcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hairdresser of hairdressers">
+        <td>{{ hairdresser.name }}</td>
+        <td>{{ hairdresser.description }}</td>
+        <td>{{ hairdresser.experience }}</td>
+        <td>{{ hairdresser.workingHours }}</td>
+        <td>{{ hairdresser.email }}</td>
+        <td>{{ hairdresser.phoneNumber }}</td>
+
+        <td>
+          <button (click)="updateHairdresser(hairdresser.id)">Aktualizuj</button>
+          <br>
+          <br>
+          <button (click)="deleteHairdresser(hairdresser.id)">Usuń</button>
+          <br>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

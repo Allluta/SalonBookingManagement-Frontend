@@ -1,0 +1,107 @@
+<div class="profile-container" *ngIf="hairdresserInfo">
+  <div class="profile-info">
+    <h1>{{ hairdresserInfo.name }}</h1>
+    <p>{{ hairdresserInfo.description }}</p>
+    <p>Doświadczenie: {{ hairdresserInfo.experience }} lat</p>
+    <p>Godziny pracy: {{ hairdresserInfo.workingHours }}</p>
+  </div>
+</div>
+
+<div class="reservation-container">
+  <h2>Twoje  rezerwacje</h2>
+
+    <div *ngIf=" pendingReservations && pendingReservations.length > 0">
+      <h3>Niepotwierdzone rezerwacje</h3>
+      <ul>
+        <li *ngFor="let reservation of pendingReservations">
+          <div class="reservation-details">
+            <p><strong>Data:</strong> {{ reservation.date | date: 'MMM d, y' }}</p>
+            <p><strong>Godzina:</strong> {{ reservation.time }}</p>
+            <p><strong>Email:</strong> {{ reservation.email }}</p>
+            <p><strong>Numer telefonu:</strong> {{ reservation.phoneNumber }}</p>
+            <p><strong>Status:</strong> {{ reservation.status }}</p>
+            <button *ngIf="reservation.status === 'Niepotwierdzona'" (click)="acceptReservation(reservation)">Akceptuj</button>
+            <button *ngIf="reservation.status === 'Niepotwierdzona'" (click)="rejectReservation(reservation)">Odrzuć</button>
+            </div>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="upcomingReservations&& upcomingReservations.length > 0">
+      <h3>Nadchodzące rezerwacje</h3>
+      <ul>
+        <li *ngFor="let reservation of upcomingReservations">
+          <div class="reservation-details">
+            <p><strong>Data:</strong> {{ reservation.date | date: 'MMM d, y' }}</p>
+            <p><strong>Godzina:</strong> {{ reservation.time }}</p>
+            <p><strong>Email:</strong> {{ reservation.email }}</p>
+            <p><strong>Numer telefonu:</strong> {{ reservation.phoneNumber }}</p>
+            <p><strong>Status:</strong> {{ reservation.status }}</p>
+
+            <ng-container *ngIf="reservation.status === 'Zatwierdzona'">
+              <button (click)="cancelReservation(reservation)">Zrezygnuj z potwierdzonej rezerwacji</button>
+    
+            </ng-container>
+
+            </div>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="completedReservations && completedReservations.length > 0">
+      <h3>Minione rezerwacje</h3>
+      <ul>
+        <li *ngFor="let reservation of completedReservations">
+          <div class="reservation-details">
+            <p><strong>Data:</strong> {{ reservation.date | date: 'MMM d, y' }}</p>
+            <p><strong>Godzina:</strong> {{ reservation.time }}</p>
+            <p><strong>Email:</strong> {{ reservation.email }}</p>
+            <p><strong>Numer telefonu:</strong> {{ reservation.phoneNumber }}</p>
+            <p><strong>Status:</strong> {{ reservation.status }}</p>
+    
+            
+            <ng-container *ngIf="reservation.status === 'Zatwierdzona' || reservation.status === 'Odbyta'">
+              
+              <ng-container *ngIf="reservation.status === 'Zatwierdzona'">
+                <button (click)="confirmClientAppearance(reservation)">Potwierdź pojawienie się klienta</button>
+                <br>
+                <button (click)="confirmClient(reservation)">Potwierdź nie pojawienie się klienta</button>
+              </ng-container>
+            </ng-container>
+    
+            <p *ngIf="reservation.status === 'Odbyta' && !reservation.clientDidNotAppear && !reservation.isClientPresent">
+             
+            </p>
+    
+            <p *ngIf="reservation.clientDidNotAppear">Klient się nie pojawił.</p>
+            <p *ngIf="reservation.isClientPresent">Klient się pojawił.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div *ngIf="canceledReservations &&canceledReservations.length > 0">
+      <h3>Odrzucone/Zrezygnowane/ Nieodbyte rezerwacje</h3>
+      <ul>
+        <li *ngFor="let reservation of canceledReservations">
+          <div class="reservation-details">
+            <p><strong>Data:</strong> {{ reservation.date | date: 'MMM d, y' }}</p>
+            <p><strong>Godzina:</strong> {{ reservation.time }}</p>
+            <p><strong>Email:</strong> {{ reservation.email }}</p>
+            <p><strong>Numer telefonu:</strong> {{ reservation.phoneNumber }}</p>
+            <p><strong>Status:</strong> {{ reservation.status }}</p>
+            <p *ngIf="reservation.status === 'Zrezygnowano'" class="cancelled-message">
+              Użytkownik zrezygnował z rezerwacji.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <ng-template #noReservations>
+    <p>Brak nadchodzących rezerwacji.</p>
+  </ng-template>
+
+

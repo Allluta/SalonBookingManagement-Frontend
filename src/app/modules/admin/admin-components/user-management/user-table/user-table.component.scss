@@ -1,0 +1,54 @@
+/* Styl dla tabeli użytkowników */
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto; /* Centrowanie tabeli w poziomie z marginesami */
+  }
+  
+  /* Styl dla nagłówka tabeli */
+  .table th {
+    background-color: #221f21; /* Kolor tła nagłówka */
+    color: #fff; /* Kolor tekstu w nagłówku */
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #040000; /* Dodajemy obramowanie nagłówka */
+  }
+  
+  /* Styl dla komórki nagłówka z tytułem "UŻYTKOWNICY" */
+  .table th[colspan="4"] {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  
+  /* Styl dla komórki nagłówka */
+  .table th:nth-child(1),
+  .table th:nth-child(2),
+  .table th:nth-child(3),
+  .table th:nth-child(4) {
+    border: 1px solid #040000;
+  }
+  
+  /* Styl dla komórek wierszy z danymi użytkowników */
+  .table td {
+    border: 1px solid #040000;
+    padding: 10px;
+  }
+  
+  /* Styl dla przycisku "Usuń" */
+  .button {
+    background-color: #f1eced; /* Kolor tła przycisku */
+    color: #070606; /* Kolor tekstu przycisku */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Dostosuj rozmiar przycisku według potrzeb */
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  /* Styl dla przycisku "Usuń" po najechaniu myszką */
+  .button:hover {
+    background-color: #fff; /* Kolor tła po najechaniu myszką */
+    color: #ff0000; /* Zmiana koloru tekstu po najechaniu myszką */
+  }
+  

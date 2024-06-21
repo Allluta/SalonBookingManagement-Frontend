@@ -1,0 +1,19 @@
+
+
+<div class="services-header">
+    <h2>Wszystkie dostępne usługi wraz z opisem, ceną i czasem ich trwania</h2>
+  </div>
+  
+  <table class="services-table">
+    <thead>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of services" class="service-item">
+        <td class="service-name">{{ service.name }}</td>
+        <td class="service-description">{{ service.description }}</td>
+        <td class="service-price">{{ service.price }} zł</td>
+        <td class="service-duration">{{ service.duration }} minut</td>
+      </tr>
+    </tbody>
+  </table>
+  

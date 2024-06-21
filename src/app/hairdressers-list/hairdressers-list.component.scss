@@ -1,0 +1,43 @@
+
+
+.hairdressers-container {
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  
+  .hairdresser-item {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .hairdresser-info {
+    flex: 1;
+  }
+  
+  .hairdresser-name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .hairdresser-description,
+  .hairdresser-specialty {
+    margin-top: 5px;
+  }
+  
+  .hairdresser-actions button {
+    background-color: #221f21;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .hairdresser-actions button:hover {
+    background-color: #333;
+  }
+  

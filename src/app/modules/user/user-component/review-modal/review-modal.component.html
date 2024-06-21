@@ -1,0 +1,9 @@
+<div class="review-form">
+    <h2>Dodaj opinię</h2>
+    <label for="rating">Ocena:</label>
+    <input type="number" [(ngModel)]="rating" name="rating" min="1" max="5" required>
+    <label for="comment">Komentarz:</label>
+    <textarea [(ngModel)]="comment" name="comment"></textarea>
+    <button (click)="submitReview()">Dodaj opinię</button>
+  </div>
+  
